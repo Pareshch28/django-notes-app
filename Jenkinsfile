@@ -46,7 +46,7 @@ pipeline {
             steps {
                 echo 'deploying successful'
                 sh 'docker-compose up -d'
-                echo 'abbto chal gaya bhenchod haa'
+                echo 'abbto chal gaya bhenchod ha'
             }
         }
     }
