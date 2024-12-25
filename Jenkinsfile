@@ -38,7 +38,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId:'dockerhubcred',passwordVariable: 'dockerHubPass',usernameVariable:'dockerHubUser')]){
                 sh 'docker login -u $dockerHubUser -p $dockerHubPass'   
                 sh 'docker image tag pareshch28/notes-app pareshch28/djangosonarqube-app:latest'
-                sh 'docker push pareshch28/notes-app:latest'
+                sh 'doker push pareshch28/djangosonarqube-app:latest'
                 }
             }
         }
