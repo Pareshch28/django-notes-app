@@ -10,6 +10,15 @@ pipeline {
                }
             }
         }
+        
+        stage('build') {
+            steps {
+                script{
+                    docker_build('notes-app','latest','pareshch28')
+                echo 'build stage successful'
+            }
+          }     
+        }
         stage('Code Quality Analysis') {
             steps {
                 withSonarQubeEnv('LocalSonar') { // Refers to the configured SonarQube server
@@ -22,14 +31,6 @@ pipeline {
                     '''             
                 }
             }
-        }
-        stage('build') {
-            steps {
-                script{
-                    docker_build('notes-app','latest','pareshch28')
-                echo 'build stage successful'
-            }
-          }     
         }
         stage('build push') {
             steps {
