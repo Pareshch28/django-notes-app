@@ -10,9 +10,14 @@ pipeline {
                }
             }
         }
-        stage('Sonarqube') {
+        stage('Code Quality Analysis') {
             steps {
-                hello()
+                withSonarQubeEnv('LocalSonar') { // Refers to the configured SonarQube server
+                    sh 'sonar-scanner -Dsonar.projectKey=Sonarqube-testproject \
+                                     -Dsonar.sources=. \
+                                     -Dsonar.host.url=http://localhost:9000 \
+                                     -Dsonar.login=<sqp_fa91fa2c1a087e2bc2af3ad9f59d78f97fe494ce>'
+                }
             }
         }
         stage('build') {
