@@ -36,7 +36,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'deploying successful'
-                sh 'docker compose up -d'
+                sh 'docker-compose up -d'
                 echo 'abbto chal gaya bhenchod'
             }
         }
