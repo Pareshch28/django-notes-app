@@ -21,6 +21,7 @@ pipeline {
                     docker_build('notes-app','Latest','Pareshch28')
                 echo 'build stage successful'
             }
+          }     
         }
         stage('build push') {
             steps {
