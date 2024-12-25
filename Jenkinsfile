@@ -18,7 +18,7 @@ pipeline {
         stage('build') {
             steps {
                 script{
-                    docker_build('notes-app','Latest','Pareshch28')
+                    docker_build('notes-app','Latest','pareshch28')
                 echo 'build stage successful'
             }
           }     
