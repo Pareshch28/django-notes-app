@@ -10,7 +10,7 @@ pipeline {
                }
             }
         }
-        stage('Test Library') {
+        stage('Sonarqube') {
             steps {
                 hello()
             }
