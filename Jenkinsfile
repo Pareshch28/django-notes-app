@@ -28,7 +28,7 @@ pipeline {
                 echo 'pushing image to docker hub'
                 withCredentials([usernamePassword(credentialsId:'dockerhubcred',passwordVariable: 'dockerHubPass',usernameVariable:'dockerHubUser')]){
                 sh 'docker login -u $dockerHubUser -p $dockerHubPass'   
-                sh 'docker image tag pareshch28/notes-app pareshch28/notes-app:latest'
+                sh 'docker image tag pareshch28/notes-app pareshch28/notes-app:Latest'
                 sh 'docker push pareshch28/notes-app:latest'
                 }
             }
